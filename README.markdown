@@ -3,7 +3,7 @@ easily.
 
 #Installation
 
-    git clone git://github.com/zanshin/dotfiles.git ~/.dotfiles
+    git clone git://github.com/csegura/dotfiles.git ~/.dotfiles
 	
 # Updating
 There are several git submodules included in this configuration. On a new
@@ -23,6 +23,9 @@ Vundle managed Vim bundles maybe updated from the command line via
     $ vim +BundleInstall +qall
 
 #Setup
+
+Use ~/.dotfiles/start.sh
+
 ## Homebrew
 On those Mac OS machines where I install Homebrew I also edit `/etc/paths` to move the `/usr/local/bin` entry to the top of the list. This ensures that Homebrew-managed programs and libraries occur prior to `/usr/bin` and system-provided programs and libraries. The resulting `/etc/paths` files looks like this:
 
