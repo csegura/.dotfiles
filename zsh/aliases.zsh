@@ -242,3 +242,6 @@ alias nomz='ps aux | less'
 alias nomnom='killall'
 alias cya='reboot'
 alias kthxbai='halt'
+
+
+alias reload='source ~/.zshrc'

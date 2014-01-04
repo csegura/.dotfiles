@@ -29,3 +29,6 @@ if [[ $IS_LINUX -eq 1 ]]; then
     eval $(dircolors -b /etc/DIR_COLORS.256color)
 fi
 
+# Enable color in grep
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='3;33'
