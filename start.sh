@@ -25,11 +25,11 @@ ln -s ~/.dotfiles/bash/bash_history ~/.bash_history
 # link git
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
 
 # link textmate
 ln -s ~/.dotflles/textmate/tm_properties ~/.tm_properties
 
 # link tmux
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-
 

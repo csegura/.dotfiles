@@ -66,7 +66,7 @@ set wrap                          " use line wrapping
 set textwidth=79                  " at column 79
 set ruler                         " display current cursor position
 set list                          " show invisible characters
-set listchars=tab:▸\ ,eol:¬,trail:⋅,nbsp:␣,extends:❯,precedes:❮
+"set listchars=tab:▸\ ,eol:¬,trail:⋅,nbsp:␣,extends:❯,precedes:❮
 set showmatch                     " show matching brackets
 if exists("&relativenumber")
   set relativenumber              " use relative line numbers
@@ -93,14 +93,14 @@ set formatoptions+=l              " don't break long lines that were already the
 " Navigation and movement
 " -------------------------------------------------------------------
 " disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
+"imap <up> <nop>
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
 
 " use <C>hjkl to switch between splits
 nnoremap <C-h> <C-w>h
