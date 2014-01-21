@@ -1,5 +1,6 @@
 # Wiki search term $1
 wik() { dig +short txt $1.wp.dg.cx }
+ltf() { fc -ln -1 > $1 }
 
 # -------------------------------------------------------------------
 # compressed file expander
@@ -229,3 +230,7 @@ function psax() {
   ps auxwwwh | grep "$@" | grep -v grep
 }
 
+# Creates an archive from given directory
+mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
+mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }

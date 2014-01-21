@@ -168,6 +168,7 @@ alias gf='git reflog'
 alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
 alias gdb='git diff master..`git rev-parse --abbrev-ref HEAD`'
 alias gr='git diff master..'
+alias git
 
 # leverage aliases from ~/.gitconfig
 alias gh='git hist'
