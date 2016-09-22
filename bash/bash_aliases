@@ -4,12 +4,6 @@
 # Various aliases that I like and use.
 # -------------------------------------------------------------------
 
-# Start & stop my war, ejb,  or ear container
-alias 'start-war=/as/bin/jboss.pl -c mhn-war -d start'
-alias 'stop-war=/as/bin/jboss.pl -c mhn-war -d stop'
-alias 'start-ejb=/as/bin/jboss.pl -c mhn-ejb'
-alias 'start-ear=/as/bin/jboss.pl -c mhn-ear'
-
 # Sorted size
 alias 'dus=du -sckx * | sort -nr'
 
@@ -39,6 +33,8 @@ alias l="ls -al ${colorflag}"
 alias lsd='ls -al ${colorflag} | grep \"^d\"'
 alias lh='ls -a | egrep "^\."'
 alias ls="command ls ${colorflag}"
+
+alias p='cd ~/Projects'
 
 # Miscellaneous
 alias 'bk=cd $OLDPWD'
@@ -71,6 +67,10 @@ alias gf='git reflog'
 # leverage an alias from the ~/.gitconfig
 alias gh='git hist'
 
+# Programs
+alias s='~/Software/sublime_text_3/sublime_text'
+
+alias reload='source ~/.bashrc'
 
 # finis
 # mhn 2013.12.24 

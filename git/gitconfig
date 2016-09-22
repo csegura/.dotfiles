@@ -1,6 +1,6 @@
 [user]
 	name = csegura
-	email = csegura@ideseg.com
+	email = romheat@gmail.com
 
 [github]
     user = csegura
@@ -29,7 +29,7 @@
     editor = vim 
     autocrlf = input
     safecrlf = warn
-    excludesfile = /Users/mark/.gitignore_global
+	excludesfile = /home/csegura/.gitignore_global
     quotepath = false
 
 [diff]

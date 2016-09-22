@@ -2,6 +2,8 @@
 # cat > /dev/null
 # And press it
 
+if [[ $IS_MAC -eq 1 ]]; then
+
 bindkey "^K"      kill-whole-line                      # ctrl-k
 bindkey "^R"      history-incremental-search-backward  # ctrl-r
 bindkey "^A"      beginning-of-line                    # ctrl-a  
@@ -27,6 +29,9 @@ if [[ $IS_LINUX -eq 1 ]]; then
 	bindkey "^[OF" end-of-line                # end on linux
 	bindkey "^[[1;5C" end-of-line                # ctrl+right on linux
 fi
+
 #bindkey -v   # Default to standard vi bindings, regardless of editor string
 bindkey "[C" forward-word
 bindkey "[D" backward-word
+
+fi
