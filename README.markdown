@@ -1,6 +1,8 @@
 This repository holds my configuration files so that I can clone them to other machines
 easily.
 
+
+
 #Installation
 
     git clone git://github.com/csegura/dotfiles.git ~/.dotfiles
@@ -26,6 +28,8 @@ Vundle managed Vim bundles maybe updated from the command line via
 
 Use ~/.dotfiles/start.sh
 
+Remember change to zsh in osx: chsh -s /bin/zsh
+
 ## Homebrew
 On those Mac OS machines where I install Homebrew I also edit `/etc/paths` to move the `/usr/local/bin` entry to the top of the list. This ensures that Homebrew-managed programs and libraries occur prior to `/usr/bin` and system-provided programs and libraries. The resulting `/etc/paths` files looks like this:
 
@@ -42,7 +46,9 @@ For zsh configuration create the following symlinks:
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshenv ~/.zshenv
     ln -s ~/.dotfiles/zsh/zprofile ~/.zprofile
-		
+
+* added code function to zsh to run Visual Studio Code
+
 ## ssh
 For ssh configuration, create the following symlink:
 

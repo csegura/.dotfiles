@@ -230,6 +230,21 @@ function psax() {
   ps auxwwwh | grep "$@" | grep -v grep
 }
 
+# --------------------------------------------------------------------
+# code
+# Open visual studio code
+# --------------------------------------------------------------------
+function code {
+    if [[ $# = 0 ]]
+    then
+        open -a "Visual Studio Code"
+    else
+        local argPath="$1"
+        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+        open -a "Visual Studio Code" "$argPath"
+    fi
+}
+
 # Creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
