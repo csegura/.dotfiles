@@ -97,6 +97,10 @@ alias 'tools=ssh mhn@tools.ome.ksu.edu'
 alias 'wf=ssh markn@markn.webfactional.com'
 alias 'chef=ssh mark@129.130.49.121'
 
+# remote machine functions
+alias 'alpha=ssh romheat@alpha'
+alias 'valpha= open vnc://alpha'
+
 # ------------------------------------------------------------------
 # tmux stuff
 # ------------------------------------------------------------------

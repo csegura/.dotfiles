@@ -5,7 +5,7 @@ easily.
 
 #Installation
 
-    git clone git://github.com/csegura/dotfiles.git ~/.dotfiles
+    git clone https://github.com/csegura/.dotfiles.git ~/.dotfiles
 	
 # Updating
 There are several git submodules included in this configuration. On a new

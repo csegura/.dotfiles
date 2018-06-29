@@ -234,7 +234,7 @@ function psax() {
 # code
 # Open visual studio code
 # --------------------------------------------------------------------
-function code {
+function vcode {
     if [[ $# = 0 ]]
     then
         open -a "Visual Studio Code"
@@ -244,6 +244,9 @@ function code {
         open -a "Visual Studio Code" "$argPath"
     fi
 }
+
+# Visua studio code as editor
+function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # Creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }

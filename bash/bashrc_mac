@@ -36,14 +36,6 @@ GIT_PS1_SHOWDIRTYSTATE=1
 PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\H \[\e[33m\]\w\[\e[0m\] $(__git_ps1 "(%s)") \n$\[\033]0;\u@\h:\w\007\] '
 #PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\H \[\e[33m\]\w\[\e[0m\]\n$\[\033]0;\u@\h:\w\007\] '
 
-# setup for Maven 1 & 2
-MAVEN_HOME=/usr/local/maven-1.1
-M2_HOME=/usr/local/apache-maven-2.2.1
-M2=/usr/local/apache-maven-2.2.1/bin
-
-# Java and Maven opts
-JAVA_OPTS='-Xms512m -Xmx1024m -XX:MaxPermSize=512m'
-MAVEN_OPTS='-Xms512m -Xmx1024m -XX:MaxPermSize=200m'
 
 
 # -------------------------------------------------------------------
@@ -63,8 +55,7 @@ CLICOLOR=1
 LSCOLORS=gxFxCxDxBxegedabagacad
 
 # export settings
-export JAVA_HOME M2_HOME M2 MAVEN_HOME HISTCONTROL HISTFILESIZE HISTSIZE HISTIGNORE CLICOLOR LSCOLORS 
-export JAVA_OPTS MAVEN_OPTS 
+export HISTCONTROL HISTFILESIZE HISTSIZE HISTIGNORE CLICOLOR LSCOLORS 
 
 # -------------------------------------------------------------------
 # Functions (NB: single-line functions must end with a semi-colon)
@@ -74,11 +65,8 @@ function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
 function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 # remote machine functions
-function palantir() { ssh mhn@palantir.ome.ksu.edu ; }
-function pvnc() { open vnc://palantir.ome.ksu.edu ; }
-function ksunix() { ssh mhn@unix.ksu.edu ; }
-function veld() { ssh mhn@veld.ome.ksu.edu ; }
-function dev() { ssh mhn@ome-dev-as1.ome.campus ; }
+function alpha() { ssh romheat@alpha ; }
+function valpha() { open vnc://alpha ; }
 
 # postgres functions
 function psqlstart() { /usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start ; }
@@ -108,12 +96,12 @@ function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') 
 
 # myIP address
 function myip() {
-    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
+  ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
 	ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
-# finis
-# mhn 2013.12.25 
+# Visua studio code as editor
+function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $* ;}

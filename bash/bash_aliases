@@ -68,7 +68,7 @@ alias gf='git reflog'
 alias gh='git hist'
 
 # Programs
-alias s='~/Software/sublime_text_3/sublime_text'
+alias s='code'
 
 alias reload='source ~/.bashrc'
 

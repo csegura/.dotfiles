@@ -69,7 +69,3 @@ export PATH
 # following line added by RVM - mhn 7.15.2011
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-
-
-# finis	
-# mhn 2011.7.19
