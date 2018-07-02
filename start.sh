@@ -28,8 +28,13 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 # link textmate
-ln -s ~/.dotflles/textmate/tm_properties ~/.tm_properties
+# ln -s ~/.dotflles/textmate/tm_properties ~/.tm_properties
 
 # link tmux
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
+# iterm2
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
