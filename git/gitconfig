@@ -50,6 +50,27 @@
     tags = tag -l
     branches = branch -a
     remotes = remote -v
+    ; show merge tree + commits info
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+    ; basic logging for quick browsing
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+    ; log + file diff
+    fl = log -u
+    ; find paths that matches the string
+    f = "!git ls-files | grep -i"
+    ; delete all merged branches
+    ; dm = !git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+    ; shortcuts
+    cp = cherry-pick
+    st = status -s
+    cl = clone
+    ci = commit
+    co = checkout
+    br = branch
+    dc = diff --cached
+
 
 [push]
     # simple is the new default, requires > 1.7
