@@ -38,3 +38,10 @@ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# change shell
+case "${SHELL}" in
+  (*zsh) ;;
+  (*) chsh -s "$(which zsh)"; exit 1 ;;
+esac
+
