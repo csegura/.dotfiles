@@ -21,3 +21,6 @@ fi
 if which rvm-prompt &> /dev/null; then
     export PATH=$HOME/.rvm/bin:$PATH
 fi
+
+# added by Miniconda3 installer
+export PATH="$HOME/dev/mc3/bin:$PATH"

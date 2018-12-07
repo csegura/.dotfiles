@@ -1,0 +1,16 @@
+eficheck
+/usr/libexec/firmwarecheckers/eficheck/eficheck --integrity-check
+ls
+chmod +x start_osx_again.sh 
+ls
+ls -la
+./start_osx_again.sh 
+ls -la
+cd .dotfiles/
+ls
+ls -la
+./start.sh
+xcode-select --install
+sudo xcode-select -install
+sudo xcode-select --install
+git --help

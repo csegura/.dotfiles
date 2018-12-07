@@ -71,6 +71,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     # rebuild Launch Services to remove duplicate entries on Open With menu
     alias rebuildopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
     alias defhist='history 1 | grep "defaults"'
+    alias remain='pmset -g batt'
 fi
 
 # The Venerable Mutt
@@ -224,4 +225,4 @@ alias kthxbai='halt'
 alias reload='source ~/.zshrc'
 
 # Programs
-alias s='~/Software/sublime_text_3/sublime_text'
+alias s='code'

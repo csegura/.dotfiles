@@ -51,3 +51,5 @@ case "${SHELL}" in
   (*) chsh -s "$(which zsh)"; exit 1 ;;
 esac
 
+sudo dscl . -create /Users/$USER UserShell $(which zsh)
+

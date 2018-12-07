@@ -12,8 +12,6 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.setup-osx` is done.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-
-
 ###############################################################################
 # General UI/UX
 ###############################################################################
@@ -22,11 +20,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Increasing the delay prevents macOS from assuming you want to be in
 # standby mode, thus taking longer to wake during the working day.
 sudo pmset -a standbydelay 10800
+sudo pmset -a hibernatemode 25 standby 0 autopoweroff 0
 
 # Disable the startup sound effects chime.
 sudo nvram SystemAudioVolume=" "
-
-
 
 # Set sidebar icon size to medium.
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
@@ -227,6 +224,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
+# Set dock on left
+defaults write com.apple.dock orientation -string left
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
@@ -488,3 +488,6 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Set sync folder to Dropbox
 # defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Dropbox/_config/appdata/Alfred"
+
+# zsh
+sudo dscl . -create /Users/$USER UserShell $(which zsh)
