@@ -5,6 +5,8 @@
 alias g8='nocorrect g8'
 alias cookbook='nocorrect cookbook'
 
+alias grep='grep -n --color'
+
 # -------------------------------------------------------------------
 # Ruby stuff
 # -------------------------------------------------------------------
