@@ -5,7 +5,8 @@ function virtualenv_info {
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
+    echo '➤'
+    #echo '○'
 }
 
 function box_name {
@@ -102,10 +103,15 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
+if [ $UID -eq 0 ]; then
+  NCOLOR=$PR_RED;
+  else NCOLOR=$PR_GREEN;
+fi
+
 PROMPT='
 ${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BLUE}$(box_name)%{$reset_color%} %{$FG[239]%}|%{$reset_color%} ${PR_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
-$(prompt_char) '
+${NCOLOR}$(prompt_char) '
 
 export SPROMPT=">> $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
-RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
+RPROMPT='${NCOLOR}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
