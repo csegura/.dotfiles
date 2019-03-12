@@ -29,7 +29,7 @@
     editor = vim 
     autocrlf = input
     safecrlf = warn
-	excludesfile = /home/pi/.gitignore_global
+	excludesfile = /home/romheat/.gitignore_global
     quotepath = false
 
 [diff]
