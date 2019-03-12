@@ -42,7 +42,8 @@ if [[ $IS_LINUX -eq 1 ]]; then
     alias ls='ls -GFh --color' # Colorize output, add file type indicator, and put sizes in human readable format
     alias ll='ls -GFhl --color' # Same as above, but in long listing format
 fi
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias 'dus=du -sckx * | sort -nr' #directories sorted by size
 
 alias 'wordy=wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
@@ -175,6 +176,7 @@ alias gf='git reflog'
 alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
 alias gdb='git diff master..`git rev-parse --abbrev-ref HEAD`'
 alias gr='git diff master..'
+alias giti='git ls-files --others --exclude-standard >> .gitignore'
 alias git
 
 # leverage aliases from ~/.gitconfig
