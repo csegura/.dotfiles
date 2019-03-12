@@ -15,6 +15,9 @@ function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_')
 endfunction
 
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
 " -------------------------------------------------------------------
 " setup Vundle to manage plugins
 " -------------------------------------------------------------------
