@@ -29,14 +29,21 @@ if [[ $IS_LINUX -eq 1 ]]; then
 	bindkey '\e[1;5C' forward-word
 	bindkey '\e[1;5D' backward-word
 fi
+
 case "$TERM" in
     xterm-256color)
 		echo "OO"
-		bindkey "\033[1~" beginning-of-line
-		bindkey "\033[4~" end-of-line
-		bindkey "^[OC" forward-word
-		bindkey "^[OD" backward-word
-		;;
+    if [[ $IS_LINUX -eq 1 ]]; then
+      bindkey "\033[1~" beginning-of-line
+		  bindkey "\033[4~" end-of-line
+    fi
+    bindkey "^[OC" forward-char
+    bindkey "^[f" forward-word             # alt+right
+		bindkey "^[OD" backward-char
+		bindkey "^[b" backward-word            # alt+left
+    bindkey "^[OA" history-beginning-search-backward
+    bindkey "^[OD" history-beginning-search-forward
+    ;;
 esac
 
 #od -c
