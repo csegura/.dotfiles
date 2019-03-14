@@ -103,6 +103,8 @@ alias 'chef=ssh mark@129.130.49.121'
 # remote machine functions
 alias 'alpha=ssh romheat@alpha'
 alias 'valpha= open vnc://alpha'
+alias 'dafne=ssh romheat@192.168.1.118'
+alias 'saturn=ssh romheat@192.168.1.116'
 
 # ------------------------------------------------------------------
 # tmux stuff
@@ -226,6 +228,11 @@ alias cya='reboot'
 alias kthxbai='halt'
 
 alias reload='source ~/.zshrc'
+
+# tools
+alias pps='ps -Ao user,uid,comm,pid,pcpu,tty --sort=-pcpu | head -n 6'
+alias df='df -h'
+alias ttop='top -b | head -n 12'
 
 # Programs
 alias s='code'
