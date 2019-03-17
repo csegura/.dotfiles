@@ -55,6 +55,7 @@ fi
 
 [[ -n "${key[Up]}"       ]]  && bindkey "${key[Up]}"       up-line-or-history
 [[ -n "${key[Down]}"     ]]  && bindkey "${key[Down]}"     down-line-or-history
+
 bindkey "^[OA" up-line-or-history
 bindkey "^[OB" down-line-or-history
 
