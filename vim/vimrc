@@ -344,6 +344,11 @@ endif
 " show hidden files in NERDTree
 " let NERDTreeShowHidden=1
 
+" move buffers
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
+
 " Command-t
 nmap <leader>t :CommandT <CR>
 nmap <leader>T :CommandTFlush<CR>:CommandT<CR>
