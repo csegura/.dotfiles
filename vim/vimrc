@@ -32,10 +32,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
-Bundle 'benmills/vimux'
-Bundle 'git://git.wincent.com/command-t.git'
+" Bundle 'benmills/vimux'
+" Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'fholgado/minibufexpl.vim'
 
