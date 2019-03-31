@@ -93,18 +93,12 @@ alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
 alias 'vpn=sudo openconnect --config ~/.openconnect https://vpn.net.k-state.edu'
 alias 'palantir=ssh mhn@palantir.ome.ksu.edu -p 11122'
 alias 'pvnc=open vnc://palantir.ome.ksu.edu'
-alias 'ksunix=ssh mhn@unix.ksu.edu'
-alias 'veld=ssh mhn@veld.ome.ksu.edu'
-alias 'dev=ssh mhn@ome-dev-as1.ome.campus'
-alias 'tools=ssh mhn@tools.ome.ksu.edu'
-alias 'wf=ssh markn@markn.webfactional.com'
-alias 'chef=ssh mark@129.130.49.121'
 
-# remote machine functions
 alias 'alpha=ssh romheat@alpha'
 alias 'valpha= open vnc://alpha'
 alias 'dafne=ssh romheat@192.168.1.118'
 alias 'saturn=ssh romheat@192.168.1.116'
+alias 'zeus=ssh romheat@192.168.1.200'
 
 # ------------------------------------------------------------------
 # tmux stuff
@@ -230,9 +224,16 @@ alias kthxbai='halt'
 alias reload='source ~/.zshrc'
 
 # tools
-alias pps='ps -Ao user,uid,comm,pid,pcpu,tty --sort=-pcpu | head -n 6'
 alias df='df -h'
-alias ttop='top -b | head -n 12'
+# get top process eating memory
+alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
+alias psmem10='ps -e -orss=,args= | sort -b -k1,1n| head -10'
+# get top process eating cpu if not work try excute : export LC_ALL='C'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1 -nr'
+alias pscpu10='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1 -nr | head -10'
+# top10 of the history
+alias hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
+
 
 # Programs
 alias s='code'
