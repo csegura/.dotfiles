@@ -253,3 +253,13 @@ function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
+
+psgrep() { ps aux | grep "${1:-.}" | grep -v grep }
+# Kills any process that matches a regexp passed to it
+killit() { ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill }
+# View all 80 Port Connections
+conport() { netstat -nat | grep -i ":$@" | wc -l }
+sortcons() { netstat -nat | awk '{print $6}' | sort | uniq -c | sort -rn }
+# Clear zombie processes
+clrz() { ps -eal | awk '{ if ($2 == "Z") {print $4}}' | kill -9 }
+
