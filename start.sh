@@ -1,3 +1,7 @@
+# git submodules
+git submodule init
+git submodule update
+
 # link zsh 
 ln -s ~/.dotfiles/zsh ~/.zsh
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
@@ -39,17 +43,4 @@ ln -s ~/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User/snip
 # link tmux
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
-# iterm2
-# Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iTerm2"
-# Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-# change shell
-case "${SHELL}" in
-  (*zsh) ;;
-  (*) chsh -s "$(which zsh)"; exit 1 ;;
-esac
-
-sudo dscl . -create /Users/$USER UserShell $(which zsh)
 
