@@ -489,5 +489,17 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Set sync folder to Dropbox
 # defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Dropbox/_config/appdata/Alfred"
 
+# iterm2
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iTerm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# change shell
+case "${SHELL}" in
+  (*zsh) ;;
+  (*) chsh -s "$(which zsh)"; exit 1 ;;
+esac
+
 # zsh
 sudo dscl . -create /Users/$USER UserShell $(which zsh)
