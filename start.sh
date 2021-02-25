@@ -32,13 +32,11 @@ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 # link VSCode
-ln -s ~/.dotfiles/VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s ~/.dotfiles/VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-ln -s ~/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User/snippets
-
-
-# link textmate
-# ln -s ~/.dotflles/textmate/tm_properties ~/.tm_properties
+if [[ $IS_MAC -eq 1 ]]; then
+  ln -s ~/.dotfiles/VSCode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  ln -s ~/.dotfiles/VSCode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+  ln -s ~/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User/snippets
+fi
 
 # link tmux
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
