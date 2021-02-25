@@ -40,13 +40,6 @@ alias p='cd ~/Projects'
 alias 'bk=cd $OLDPWD'
 alias 'rm=rm -i'
 
-# Mercurial (hg)
-alias 'h=hg status'
-alias 'hc=hg commit'
-alias 'push=hg push'
-alias 'pull=hg pull'
-alias 'clone=hg clone'
-
 # Git
 alias ga='git add'
 alias gp='git push'
