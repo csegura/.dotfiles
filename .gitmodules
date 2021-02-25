@@ -42,3 +42,7 @@
 	path = tmux/tmux-powerline
     url = https://github.com/erikw/tmux-powerline.git
     ignore = dirty
+[submodule "zsh-autosuggestions"]
+	path = zsh/zsh-autosuggestions
+    url = https://github.com/zsh-users/zsh-autosuggestions.git
+    ignore = dirty
