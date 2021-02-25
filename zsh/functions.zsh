@@ -231,23 +231,25 @@ function psax() {
   ps auxwwwh | grep "$@" | grep -v grep
 }
 
-# --------------------------------------------------------------------
-# code
-# Open visual studio code
-# --------------------------------------------------------------------
-function vcode {
-    if [[ $# = 0 ]]
-    then
-        open -a "Visual Studio Code"
-    else
-        local argPath="$1"
-        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-        open -a "Visual Studio Code" "$argPath"
-    fi
-}
+if [[ $IS_MAC -eq 1 ]]; then
+  # --------------------------------------------------------------------
+  # code
+  # Open visual studio code
+  # --------------------------------------------------------------------
+  function vcode {
+      if [[ $# = 0 ]]
+      then
+          open -a "Visual Studio Code"
+      else
+          local argPath="$1"
+          [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
+          open -a "Visual Studio Code" "$argPath"
+      fi
+  }
 
-# Visua studio code as editor
-function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $* ;}
+  # Visua studio code as editor
+  function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $* ;}
+fi
 
 # Creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
