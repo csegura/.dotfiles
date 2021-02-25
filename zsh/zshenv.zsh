@@ -17,10 +17,13 @@ if which rbenv &> /dev/null; then
     eval "$(rbenv init -)"
 fi
 
+# if anaconda3
+if [ -x ~/anaconda3 ]; then
+    export PATH="$HOME/anaconda3/bin:$PATH"
+fi
+
 # Add RVM to PATH for scripting, if rvm is present
 if which rvm-prompt &> /dev/null; then
     export PATH=$HOME/.rvm/bin:$PATH
 fi
 
-# added by Miniconda3 installer
-export PATH="$HOME/dev/mc3/bin:$PATH"
