@@ -101,7 +101,7 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
-local prompt_char="■"
+local prompt_char="■ "
 local return_code="%(?.%{$fg[green]%}${prompt_char}%{$reset_color%}.%{$fg[red]%}${prompt_char}%{$reset_color%})"
 
 PROMPT='
