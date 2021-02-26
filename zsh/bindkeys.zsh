@@ -149,6 +149,14 @@ bindkey '^[Oc' forward-word  # urxvt: C-Right
 bindkey "^F" forward-word  # urxvt: C-F
 bindkey "^B" backward-word # urxvt: C-B
 
+bindkey "^[[1;5D" backward-word # konsole ctrl-left
+bindkey "^[[1;5C" forward-word  # konsole ctrl-right
+
+# search ctrl up-down
+bindkey "^[[1;5A" history-search-backward # konsole ctrl-up
+bindkey "^[[1;5B" history-search-forward # konsole ctrl-down
+
+
 # Transpose words (between whitespaces)
 # Note: 'select-word-style whitespace' didn't work
 transpose-words2 () {
