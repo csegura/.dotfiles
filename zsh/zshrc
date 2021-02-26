@@ -12,3 +12,4 @@ source ~/.zsh/zsh_hooks.zsh
 source ~/.zsh/zshenv.zsh
 source ${HOME}/.dotfiles/z/z.sh
 source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
