@@ -8,15 +8,6 @@ alias cookbook='nocorrect cookbook'
 alias grep='grep -n --color'
 
 # -------------------------------------------------------------------
-# Ruby stuff
-# -------------------------------------------------------------------
-alias ri='ri -Tf ansi' # Search Ruby documentation
-alias rake="noglob rake" # necessary to make rake work inside of zsh
-#alias be='bundle exec'
-#alias bx='bundle exec'
-#alias gentags='ctags .'
-
-# -------------------------------------------------------------------
 # directory movement
 # -------------------------------------------------------------------
 alias ..='cd ..'
@@ -76,49 +67,24 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias remain='pmset -g batt'
 fi
 
-# The Venerable Mutt
-alias mutt 'cd ~/Desktop && mutt'
-
 # -------------------------------------------------------------------
 # random shortcuts
 # -------------------------------------------------------------------
-#alias s='subl -n .'
-alias p='cd ~/Projects'
 alias v='vim'
-alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
 
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias 'vpn=sudo openconnect --config ~/.openconnect https://vpn.net.k-state.edu'
-alias 'palantir=ssh mhn@palantir.ome.ksu.edu -p 11122'
-alias 'pvnc=open vnc://palantir.ome.ksu.edu'
-
-alias 'alpha=ssh romheat@alpha'
-alias 'valpha= open vnc://alpha'
-alias 'dafne=ssh romheat@192.168.1.118'
-alias 'saturn=ssh romheat@192.168.1.116'
-alias 'zeus=ssh romheat@192.168.1.200'
+alias 'alpha=ssh alpha'
+alias 'saturn=ssh saturn'
+alias 'zeus=ssh zeus'
 
 # ------------------------------------------------------------------
 # tmux stuff
 # ------------------------------------------------------------------
 alias takeover="tmux detach -a"
 alias attach="tmux attach -t base || tmux new -s base"
-
-# -------------------------------------------------------------------
-# Mutt stuff
-# -------------------------------------------------------------------
-alias mutt 'cd ~/Desktop && mutt'
-
-# -------------------------------------------------------------------
-# database
-# -------------------------------------------------------------------
-if [[ $IS_MAC -eq 1 ]]; then
-    alias 'psqlstart=pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-    alias 'psqlstop=pg_ctl stop'
-    #alias psql=/usr/local/Cellar/postgres/9.2.2/bin/psql
-fi
+alias arun="tmux attach -t run || tmux new -s run"
 
 # -------------------------------------------------------------------
 # ome devvm start, stop, ssh, and mount
@@ -127,26 +93,6 @@ alias 'startvm=VBoxHeadless --startvm devvm'
 alias 'stopvm=VBoxManage controlvm devvm poweroff'
 alias 'devvm=ssh -p 10022 ome@localhost'
 alias 'devmount=mount_smbfs //ome:ch1cag0@localhost:10139/ome /Users/$USERNAME/Projects/devvm/'
-
-# -------------------------------------------------------------------
-# Vagrant
-# -------------------------------------------------------------------
-alias 'vg=vagrant'
-alias 'vs=vagrant ssh'
-alias 'vu=vagrant up'
-alias 'vp=vagrant provision'
-alias 'vh=vagrant halt'
-alias 'vr=vagrant reload'
-
-
-# -------------------------------------------------------------------
-# Mercurial (hg)
-# -------------------------------------------------------------------
-alias 'h=hg status'
-alias 'hc=hg commit'
-alias 'push=hg push'
-alias 'pull=hg pull'
-alias 'clone=hg clone'
 
 # -------------------------------------------------------------------
 # Git
@@ -184,13 +130,6 @@ alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 
 # gu shows a list of all developers and the number of commits they've made
 alias gu="git shortlog | grep -E '^[^ ]'"
-
-# -------------------------------------------------------------------
-# Python virtualenv
-# -------------------------------------------------------------------
-alias mkenv='mkvirtualenv'
-alias on="workon"
-alias off="deactivate"
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'

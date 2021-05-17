@@ -14,3 +14,15 @@ xcode-select --install
 sudo xcode-select -install
 sudo xcode-select --install
 git --help
+sudo apt update
+apt install sudo
+apt update
+su -
+git clone https://github.com/csegura/.dotfiles.git
+cd .dotfiles/
+git submodule init
+git submodule update
+vim +BundleInstall +qall
+chsh -s /bin/zsh
+./start.sh 
+exit
