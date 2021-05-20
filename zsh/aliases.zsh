@@ -34,10 +34,10 @@ if [[ $IS_LINUX -eq 1 ]]; then
     alias ll='ls -GFhl --color' # Same as above, but in long listing format
 fi
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias 'dus=du -sckx * | sort -nr' #directories sorted by size
+alias dus='du -sckx * | sort -nr' #directories sorted by size
 
-alias 'wordy=wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
-alias 'filecount=find . -type f | wc -l' # number of files (not directories)
+alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
+alias filecount='find . -type f | wc -l' # number of files (not directories)
 
 # these require zsh
 alias ltd='ls *(m0)' # files & directories modified in last day
@@ -75,9 +75,10 @@ alias v='vim'
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias 'alpha=ssh alpha'
-alias 'saturn=ssh saturn'
-alias 'zeus=ssh zeus'
+alias alpha='ssh alpha'
+alias saturn='ssh saturn'
+alias zeus='ssh zeus'
+alias tierra='ssh tierra'
 
 # ------------------------------------------------------------------
 # tmux stuff
@@ -85,14 +86,6 @@ alias 'zeus=ssh zeus'
 alias takeover="tmux detach -a"
 alias attach="tmux attach -t base || tmux new -s base"
 alias arun="tmux attach -t run || tmux new -s run"
-
-# -------------------------------------------------------------------
-# ome devvm start, stop, ssh, and mount
-# -------------------------------------------------------------------
-alias 'startvm=VBoxHeadless --startvm devvm'
-alias 'stopvm=VBoxManage controlvm devvm poweroff'
-alias 'devvm=ssh -p 10022 ome@localhost'
-alias 'devmount=mount_smbfs //ome:ch1cag0@localhost:10139/ome /Users/$USERNAME/Projects/devvm/'
 
 # -------------------------------------------------------------------
 # Git
@@ -139,40 +132,18 @@ alias acat='< ~/.zsh/aliases.zsh'
 alias fcat='< ~/.zsh/functions.zsh'
 alias sz='source ~/.zshrc'
 
-# -------------------------------------------------------------------
-# Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
-# -------------------------------------------------------------------
-alias wtf='dmesg'
-alias onoz='cat /var/log/errors.log'
-alias rtfm='man'
-alias visible='echo'
-alias invisible='cat'
-alias moar='more'
-alias icanhas='mkdir'
-alias donotwant='rm'
-alias dowant='cp'
-alias gtfo='mv'
-alias hai='cd'
-alias plz='pwd'
-alias inur='locate'
-alias nomz='ps aux | less'
-alias nomnom='killall'
-alias cya='reboot'
-alias kthxbai='halt'
-
 alias reload='source ~/.zshrc'
 
 # tools
 alias df='df -h'
 # get top process eating memory
 alias psmem='ps -e -orss=,args= | sort -b -k1,1n'
-alias psmem10='ps -e -orss=,args= | sort -b -k1,1n| head -10'
+alias psmem10='ps -e -orss=,args= | sort -b -k1,1n | head -10'
 # get top process eating cpu if not work try excute : export LC_ALL='C'
-alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1 -nr'
-alias pscpu10='ps -e -o pcpu,cpu,nice,state,cputime,args|sort -k1 -nr | head -10'
+alias pscpu='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr'
+alias pscpu10='ps -e -o pcpu,cpu,nice,state,cputime,args | sort -k1 -nr | head -10'
 # top10 of the history
 alias hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
-
 
 # Programs
 alias s='code'
