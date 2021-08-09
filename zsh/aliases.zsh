@@ -84,7 +84,7 @@ alias tierra='ssh tierra'
 # tmux stuff
 # ------------------------------------------------------------------
 alias takeover="tmux detach -a"
-alias attach="tmux attach -t base || tmux new -s base"
+alias abase="tmux attach -t base || tmux new -s base"
 alias arun="tmux attach -t run || tmux new -s run"
 
 # -------------------------------------------------------------------
