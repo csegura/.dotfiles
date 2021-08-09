@@ -78,7 +78,8 @@ alias v='vim'
 alias alpha='ssh alpha'
 alias saturn='ssh saturn'
 alias zeus='ssh zeus'
-alias tierra='ssh tierra'
+alias tierra='ssh -X tierra'
+alias esx='ssh root@esxi'
 
 # ------------------------------------------------------------------
 # tmux stuff
@@ -131,7 +132,7 @@ alias tmux='TERM=screen-256color-bce tmux'
 alias acat='< ~/.zsh/aliases.zsh'
 alias fcat='< ~/.zsh/functions.zsh'
 alias sz='source ~/.zshrc'
-
+alias open='xdg-open'
 alias reload='source ~/.zshrc'
 
 # tools
@@ -147,3 +148,6 @@ alias hist10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 
 # Programs
 alias s='code'
+
+# misc
+alias wiki='dig +short txt $1.wp.dg.cx'

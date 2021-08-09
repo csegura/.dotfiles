@@ -45,9 +45,8 @@ syntax on
 " -------------------------------------------------------------------
 "  change map <leader> from \ to ,
 "  ------------------------------------------------------------------
-:let mapleader = ","
+let mapleader = ","
 
-" time out mappings after 1 second (1000) and key codes after 1/2 a second (500)
 set timeout timeoutlen=1000 ttimeoutlen=500
 
 " Trying to break a very old habit...
@@ -212,7 +211,7 @@ set expandtab           " expand tabs to spaces (overloadable by file type)
 " -------------------------------------------------------------------
 " Scrolling
 " -------------------------------------------------------------------
-set scrolloff=5         " show context above/below cursor line
+set scrolloff=8         " show context above/below cursor line
 set sidescrolloff=10    " number of cols from horizontal edge to  start scrolling
 set sidescroll=1        " number of cols to scroll at a time
 
