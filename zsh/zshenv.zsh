@@ -27,3 +27,7 @@ if which rvm-prompt &> /dev/null; then
     export PATH=$HOME/.rvm/bin:$PATH
 fi
 
+# if recipes
+if [ -x ~/recipes ]; then
+    export PATH="$HOME/recipes:$PATH"
+fi
