@@ -2,39 +2,40 @@
 git submodule init
 git submodule update
 
-path = $(pwd)
-echo "path: $path"
+SCRIPT_PATH=`readlink -f "$0"`
+SCRIPT_DIR=`dirname "$SCRIPT_PATH"`
+echo "path: $SCRIPT_DIR"
 
 # link zsh 
-ln -sf $path/.dotfiles/zsh ~/.zsh
-ln -sf $path/.dotfiles/zsh/zshrc ~/.zshrc
-ln -sf $path/.dotfiles/zsh/zshenv ~/.zshenv
-ln -sf $path/.dotfiles/zsh/zprofile ~/.zprofile
+ln -sf $SCRIPT_DIR/.dotfiles/zsh ~/.zsh
+ln -sf $SCRIPT_DIR/.dotfiles/zsh/zshrc ~/.zshrc
+ln -sf $SCRIPT_DIR/.dotfiles/zsh/zshenv ~/.zshenv
+ln -sf $SCRIPT_DIR/.dotfiles/zsh/zprofile ~/.zprofile
 
 # link ssh 
-ln -sf $path/.dotfiles/ssh/config ~/.ssh/config
+ln -sf $SCRIPT_DIR/.dotfiles/ssh/config ~/.ssh/config
 
 # link vim 
-ln -sf $path/.dotfiles/vim ~/.vim
-ln -sf $path/.dotfiles/vim/vimrc ~/.vimrc
-ln -sf $path/.dotfiles/vim/gvimrc ~/.gvimrc
+ln -sf $SCRIPT_DIR/.dotfiles/vim ~/.vim
+ln -sf $SCRIPT_DIR/.dotfiles/vim/vimrc ~/.vimrc
+ln -sf $SCRIPT_DIR/.dotfiles/vim/gvimrc ~/.gvimrc
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 
 # inside vim :BundleInstall
 
 # link bash
-ln -sf $path/.dotfiles/bash/bash_profile ~/.bash_profile
-ln -sf $path/.dotfiles/bash/bashrc ~/.bashrc
-ln -sf $path/.dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -sf $path/.dotfiles/bash/bash_history ~/.bash_history
+ln -sf $SCRIPT_DIR/.dotfiles/bash/bash_profile ~/.bash_profile
+ln -sf $SCRIPT_DIR/.dotfiles/bash/bashrc ~/.bashrc
+ln -sf $SCRIPT_DIR/.dotfiles/bash/bash_aliases ~/.bash_aliases
+ln -sf $SCRIPT_DIR/.dotfiles/bash/bash_history ~/.bash_history
 
 # link git
-ln -sf $path/.dotfiles/git/gitconfig ~/.gitconfig
-ln -sf $path/.dotfiles/git/gitignore_global ~/.gitignore_global
+ln -sf $SCRIPT_DIR/.dotfiles/git/gitconfig ~/.gitconfig
+ln -sf $SCRIPT_DIR/.dotfiles/git/gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 # link tmux
-ln -sf $path/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sf $SCRIPT_DIR/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 
