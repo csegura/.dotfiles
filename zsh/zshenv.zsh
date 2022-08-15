@@ -8,6 +8,9 @@ fi
 # /usr/local/bin is also first in /etc/paths
 export PATH="/usr/local/bin:$PATH"
 
+# # make sure path matches with "npm config get prefix"
+export PATH="/usr:$PATH"
+
 # if rbenv is present, configure it for use
 if which rbenv &> /dev/null; then
     # Put the rbenv entry at the front of the line

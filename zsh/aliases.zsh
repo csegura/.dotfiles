@@ -109,7 +109,7 @@ alias gcl='git clone'
 alias gta='git tag -a -m'
 alias gf='git reflog'
 alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
-alias gdb='git diff master..`git rev-parse --abbrev-ref HEAD`'
+# alias gdb='git diff master..`git rev-parse --abbrev-ref HEAD`'
 alias gr='git diff master..'
 alias giti='git ls-files --others --exclude-standard >> .gitignore'
 alias git
