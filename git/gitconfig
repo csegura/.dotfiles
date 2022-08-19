@@ -5,6 +5,9 @@
 [github]
     user = csegura
 
+[core]
+  sshCommand = "ssh -i ~/.ssh/github"
+
 [color]
     ui = auto
     interactive = auto
