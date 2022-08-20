@@ -8,11 +8,6 @@
 myos=`uname -s`
 
 case "$myos" in
-  SunOS)
-    # colorflag="--color=auto -AFC"
-    colorflag=""
-    source ~/.dotfiles/bash/bashrc_sunos
-    ;;
   Darwin)
     colorflag="-G"
     source ~/.dotfiles/bash/bashrc_mac
