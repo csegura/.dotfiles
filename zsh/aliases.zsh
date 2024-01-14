@@ -30,7 +30,7 @@ if [[ $IS_LINUX -eq 1 ]]; then
     alias lh='ls -d .* --color' # show hidden files/directories only
     alias lsd='ls -aFhlG --color'
     alias l='ls -al --color'
-    alias ls='ls -GFh --color' # Colorize output, add file type indicator, and put sizes in human readable format
+    alias ls='ls -Fh --color' # Colorize output, add file type indicator, and put sizes in human readable format
     alias ll='ls -GFhl --color' # Same as above, but in long listing format
 fi
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
