@@ -31,8 +31,7 @@ if [[ $IS_LINUX -eq 1 ]]; then
 fi
 
 # Enable color in grep
-#export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='3;33'
+export GREP_COLORS='mt=3;33'
 
 # di=5;34;43 Setting the LS_COLORS di parameter to the above example will make directories appear in flashing blue text with an orange background
 #0 =  Default Colour

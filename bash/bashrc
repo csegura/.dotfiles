@@ -8,11 +8,6 @@
 myos=`uname -s`
 
 case "$myos" in
-  SunOS)
-    # colorflag="--color=auto -AFC"
-    colorflag=""
-    source ~/.dotfiles/bash/bashrc_sunos
-    ;;
   Darwin)
     colorflag="-G"
     source ~/.dotfiles/bash/bashrc_mac
@@ -32,7 +27,7 @@ PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\H \[\e[33m\]\w\[\e[0m\]\n$\[\033]0;\
 source ~/.dotfiles/bash/bash_aliases
 
 # exports
-export EDITOR=code
+export EDITOR=vim
 export PAGER=less
 export LESS="-M -n -q -i"
 

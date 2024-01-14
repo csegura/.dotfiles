@@ -120,20 +120,17 @@ path() {
            sub(\"/sbin\",  \"$fg_no_bold[magenta]/sbin$reset_color\"); \
            sub(\"/local\", \"$fg_no_bold[yellow]/local$reset_color\"); \
            sub(\"/.rvm\",  \"$fg_no_bold[red]/.rvm$reset_color\"); \
-           print }"
+           print }" | sort
 }
 
 # -------------------------------------------------------------------
 # Mac specific functions
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-
     # view man pages in Preview
     pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
-
     # function to show interface IP assignments
     ips() { foo=`/Users/mark/bin/getip.py; /Users/mark/bin/getip.py en0; /Users/mark/bin/getip.py en1`; echo $foo; }
-
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
     notify() { automator -D title=$1 -D subtitle=$2 -D message=$3 ~/Library/Workflows/DisplayNotification.wflow }
 
@@ -204,9 +201,9 @@ function i() { cd "$(cat ~/.save_dir)" ; }
 function console () {
   if [[ $# > 0 ]]; then
     query=$(echo "$*"|tr -s ' ' '|')
-    tail -f /var/log/system.log|grep -i --color=auto -E "$query"
+    sudo tail -f /var/log/syslog|grep -i --color=auto -E "$query"
   else
-    tail -f /var/log/system.log
+    sudo tail -f /var/log/syslog
   fi
 }
 
@@ -228,28 +225,12 @@ givedef() {
 # from http://hiltmon.com/blog/2013/07/30/quick-process-search/
 # --------------------------------------------------------------------
 function psax() {
-  ps auxwwwh | grep "$@" | grep -v grep
+  ps auxwwwh | egrep "$@" | grep -v grep
 }
 
-if [[ $IS_MAC -eq 1 ]]; then
-  # --------------------------------------------------------------------
-  # code
-  # Open visual studio code
-  # --------------------------------------------------------------------
-  function vcode {
-      if [[ $# = 0 ]]
-      then
-          open -a "Visual Studio Code"
-      else
-          local argPath="$1"
-          [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-          open -a "Visual Studio Code" "$argPath"
-      fi
-  }
-
-  # Visua studio code as editor
-  function code () { VSCODE_CWD="$PWD"; open -n -b "com.microsoft.VSCode" --args $* ;}
-fi
+function pretty_csv {
+    column -t -s, -n "$@" | less -F -S -X -K
+}
 
 # Creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
@@ -264,4 +245,6 @@ conport() { netstat -nat | grep -i ":$@" | wc -l }
 sortcons() { netstat -nat | awk '{print $6}' | sort | uniq -c | sort -rn }
 # Clear zombie processes
 clrz() { ps -eal | awk '{ if ($2 == "Z") {print $4}}' | kill -9 }
+# zombie
+zbe() { ps -eal | awk '{ if ($2 == "Z") {print $4}}' }
 

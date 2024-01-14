@@ -13,4 +13,4 @@ source ~/.zsh/zshenv.zsh
 source ${HOME}/.dotfiles/z/z.sh
 source ${HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ${HOME}/.acme.sh/acme.sh.env
+#source ${HOME}/.acme.sh/acme.sh.env &> /dev/null
